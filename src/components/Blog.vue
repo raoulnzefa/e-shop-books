@@ -30,11 +30,10 @@
 </template>
 
 <script>
-	
 </script>
 
 <style lang="sass">
-.blog 
+.blog
 	.blog_wrapp
 		border-top: 1px solid #eee
 		display: flex
@@ -46,7 +45,7 @@
 			margin: auto
 			img
 				width: 100%
-			p 
+			p
 				color: gray
 				font-size: 18px
 				padding: 0 10px
@@ -55,7 +54,7 @@
 		flex-direction: column
 	.blog .blog_wrapp .blog_wrapp-item
 		width: 80%
-		P 
+		P
 			padding: 0
 @media only screen and (max-width: 480px)
 	.blog .blog_wrapp .blog_wrapp-item

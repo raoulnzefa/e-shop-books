@@ -80,7 +80,7 @@ export default {
   created () {
     window.addEventListener('scroll', this.handleScroll);
   },
-  mounted() {
+  mounted () {
     window.scroll(0, 0)
   }
 }
@@ -182,10 +182,6 @@ body
               align-items: center
               border-bottom: 1px solid $default-color
               padding: 10px 0
-              img
-                height: 50%
-                width: 60%
-                margin: auto
       .mob-icon
         display: none
     .header_mobile_wrapp

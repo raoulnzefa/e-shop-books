@@ -41,16 +41,16 @@
 						<div class="shop-cart_wrapp-items" v-for="product in products">
 							<div>
 								<h2>{{ product.title }}</h2>
+								<div style="float: right">
+									<x-icon
+										@click="removeCartItems()"
+										class="custom-class">
+									</x-icon>
+								</div>
 								<img :src="product.img"/>
 							</div>
 							<div>
 								{{ product.price | currency }} x {{ product.quantity }}
-							</div>
-							<div>
-								<x-icon
-									@click="removeCartItems()"
-									class="custom-class">
-								</x-icon>
 							</div>
 						</div>
 						<div style="margin: 0.83em 0">Total: <span style="font-weight: 700">{{ total | currency}}</span></div>

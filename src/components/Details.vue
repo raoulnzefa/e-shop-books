@@ -85,6 +85,17 @@ export default {
 			width: 50%
 			h3
 				color: gray
+			button
+				text-tranform: uppercase
+				font-size: 18px
+				color: #65889b
+				background-color: #eee
+				margin: 15px 0 0 0
+				padding: 8px 25px
+				color: black
+				border: none
+				outline: none
+				cursor: pointer
 @media only screen and (max-width: 991px)
 	.item .item_wrapp .item_wrapp-items h3
 		font-size: 16px

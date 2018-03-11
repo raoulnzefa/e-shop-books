@@ -16,18 +16,20 @@
 							<div style="height: 50px; width: 50px">
 								<span @click="ModalCart = false"><x-icon class="custom-class"></x-icon></span>
 							</div>
-						</div> 
+						</div>
 						<div class="cart_wrapp-item" v-for="product in products">
 							<div>
-								<img :src="product.img"/>
 								<h3>{{ product.title }}</h3>
+								<img :src="product.img"/>
 							</div>
-							<div>	
+							<div>
 								{{ product.price | currency }} x {{ product.quantity }}
 							</div>
 						</div>
-						<router-link to="/ShoppingCart"><p><button @click="ModalCart = false">Checkout</button></p></router-link>
-						<p>Total: {{ total | currency }}</p>
+						<router-link to="/ShoppingCart"><p>
+							<button @click="ModalCart = false">Checkout</button></p>
+						</router-link>
+						<strong>Total: {{ total | currency }}</strong>
 					</div>
 				</div>
 			</div>
@@ -83,9 +85,9 @@ import { mapGetters, mapActions, mapState, mapMutations } from 'vuex'
 			.modal-cart
 				background: rgba(0, 0, 0, 0.5)
 				position: fixed
-			    top: 0
-			    left: 0
-			    overflow: hidden
+		    top: 0
+		    left: 0
+		    overflow: hidden
 				margin: auto
 				width: 100%
 				display: flex
@@ -105,8 +107,6 @@ import { mapGetters, mapActions, mapState, mapMutations } from 'vuex'
 						padding: 10px 0
 						h2
 							margin: 0
-						p 
-							margin: 0
 						span
 							cursor: pointer
 					.cart_wrapp-item
@@ -116,9 +116,15 @@ import { mapGetters, mapActions, mapState, mapMutations } from 'vuex'
 						align-items: center
 						border-bottom: 1px solid #e5e5e5
 						padding: 10px 0
-						img
-							height: 50%
-							width: 60%
-							margin: auto
-
+					button
+						text-tranform: uppercase
+						font-size: 18px
+						color: #65889b
+						background-color: #eee
+						margin: 15px 0 0 0
+						padding: 8px 20px
+						color: black
+						border: none
+						outline: none
+						cursor: pointer
 </style>

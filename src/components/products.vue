@@ -21,7 +21,7 @@
 		          <router-link :to="{ name: 'detail', params: { id: index } }"><img :src="product.img"/></router-link> <br>
 		          <h3>{{ product.title }}</h3> <br>
 		          <p>{{ product.price | currency }}</p>
-			      <button 
+			      <button
 					:disabled="!product.inventory"
 					@click="addProductToCart(product)">
 					Add to cart
@@ -142,6 +142,8 @@ export default {
 	    margin: 2% auto
 	    padding: 20px 0
 @media only screen and (max-width: 480px)
-	.menprod .products .products_wrapp .products_wrapp-item
-	    width: 100%
+	.products .products .products_wrapp
+			flex-direction: column
+			.products_wrapp-item
+	    		width: 90%
 </style>
