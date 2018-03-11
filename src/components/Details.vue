@@ -17,7 +17,6 @@
 					<h3>{{ product.body }}</h3>
 					<h1>{{ product.price | currency }} </h1>
 					<button
-						v-on:click="increment"
 						:disabled="!product.inventory"
 						@click="addProductToCart(product)">
 						Add to cart
@@ -50,10 +49,10 @@ export default {
 		},
 		...mapActions([
 			'addProductToCart'
-		]),
-		...mapMutations([
- 			'increment'
- 		])
+		])
+	},
+	mounted: function () {
+	  window.scroll(0, 0)
 	},
 	created () {
 		this.$store.dispatch('getAllProducts')
@@ -71,7 +70,7 @@ export default {
 	padding: 40px 0
 	.item_wrapp
 		display: flex
-		img 
+		img
 			width: 120px
 			height: 183px
 		.item_wrapp-img
@@ -84,7 +83,7 @@ export default {
 		.item_wrapp-items
 			padding-left: 30px
 			width: 50%
-			h3 
+			h3
 				color: gray
 @media only screen and (max-width: 991px)
 	.item .item_wrapp .item_wrapp-items h3
@@ -93,10 +92,10 @@ export default {
 	.item .item_wrapp
 		flex-direction: column
 		align-items: center
-		.item_wrapp-img 
+		.item_wrapp-img
 			width: 100%
 			padding: 0
-		.item_wrapp-items 
+		.item_wrapp-items
 			width: 100%
 			padding: 0
 </style>

@@ -59,7 +59,7 @@ export default {
         scrolled: false,
         styles: {
           border: 'border'
-        } 
+        }
       }
   },
   components: {
@@ -79,6 +79,9 @@ export default {
   },
   created () {
     window.addEventListener('scroll', this.handleScroll);
+  },
+  mounted() {
+    window.scroll(0, 0)
   }
 }
 </script>
@@ -94,7 +97,7 @@ body
   transition: opacity .5s
 .animaterouter-enter, .animaterouter-leave-to
   opacity: 0
-#app 
+#app
   color: black
   .border
     border-bottom: 1px solid $default-color
@@ -129,7 +132,7 @@ body
               list-style: none
               display: inline
               padding-left: 15px
-            a 
+            a
               color: gray
               text-decoration: none
               font-size: 16px
@@ -168,7 +171,7 @@ body
               padding: 10px 0
               h2
                 margin: 0
-              p 
+              p
                 margin: 0
               span
                 cursor: pointer
@@ -195,36 +198,36 @@ body
       border-bottom: 1px solid $default-color
       .header_mobile_wrapp-item
         padding: 10px 0
-        nav 
+        nav
           ul
             margin: 0
             padding: 0
             li
               list-style: none
               padding: 5px 0
-              a 
+              a
                 color: gray
                 text-decoration: none
                 transition: .4s
                 outline: none
-                &:hover 
+                &:hover
                   color: black
-.container 
+.container
   margin-right: auto
   margin-left: auto
   padding-right: 15px
   padding-left: 15px
-@media (min-width: 576px) 
-  .container 
+@media (min-width: 576px)
+  .container
     max-width: 540px
-@media (min-width: 768px) 
-  .container 
+@media (min-width: 768px)
+  .container
     max-width: 720px
-@media (min-width: 992px) 
-  .container 
+@media (min-width: 992px)
+  .container
     max-width: 960px
-@media (min-width: 1200px) 
-  .container 
+@media (min-width: 1200px)
+  .container
     max-width: 1070px
 @media (max-width: 1200px)
    #app._fixed
@@ -242,9 +245,9 @@ body
     display: none
   #app .header .header_wrapp .mob-icon
     display: block
-  #app .header .header_wrapp .header_wrapp-item .logo 
+  #app .header .header_wrapp .header_wrapp-item .logo
     font-size: 16px
     float: none
     border-right: none
     padding-right: 0
-</style> 
+</style>

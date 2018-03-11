@@ -4,8 +4,10 @@ import App from './App'
 import router from './router'
 import store from './store'
 import { currency } from './currency'
+import Vuelidate from 'vuelidate'
 import 'babel-polyfill'
 
+Vue.use(Vuelidate)
 Vue.filter('currency', currency)
 Vue.config.productionTip = false
 Vue.use(VueGoogleMaps, {

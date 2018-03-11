@@ -1,9 +1,11 @@
 import shop from '../../api/shop'
+var STORAGE_KEY = 'eshop-edf98506d72db3e8c9d636fdb425c7fd'
 
 // initial state
 const state = {
   added: [],
   checkoutStatus: null
+  // JSON.parse(window.localStorage.getItem(this.STORAGE_KEY) || '[]'),
 }
 
 // getters
@@ -27,14 +29,16 @@ const getters = {
       return total + product.price * product.quantity
     }, 0)
   }
+
 }
 
 // actions
 const actions = {
-  
+
   checkout ({ commit, state }, products) {
     const savedCartItems = [...state.added]
     commit('setCheckoutStatus', null)
+    window.localStorage.clear()
     // empty cart
     commit('setCartItems', { items: [] })
     shop.buyProducts(
@@ -50,11 +54,13 @@ const actions = {
 
   addProductToCart ({ state, commit }, product) {
     commit('setCheckoutStatus', null)
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state.added))
     if (product.inventory > 0) {
       const cartItem = state.added.find(item => item.id === product.id)
       if (!cartItem) {
         commit('pushProductToCart', { id: product.id })
-      } else {
+      }
+      else {
         commit('incrementItemQuantity', cartItem)
       }
       // remove 1 item from stock
@@ -66,6 +72,12 @@ const actions = {
 
 // mutations
 const mutations = {
+
+  removeCartItems (state, item) {
+    const index = state.added.find(added => added.id === item.id)
+    state.added.splice(index, 1)
+  },
+
   pushProductToCart (state, { id }) {
     state.added.push({
       id,

@@ -10,7 +10,6 @@ import ShoppingCart from '@/components/ShoppingCart.vue'
 Vue.use(Router)
 
 export default new Router({
-
 	routes: [
 		{path: '/', name: 'products', component: products},
 		{path: '/Support', name: 'Support', component: Support},
@@ -19,8 +18,4 @@ export default new Router({
 		{path: '/detail/:id', name: 'detail', component: Details},
 		{path: '/ShoppingCart', name: 'ShoppingCart', component: ShoppingCart}
 	]
-	// scrollBehavior (to, from, savedPosition) {
-	// 	return { y: 0, x: 0 }
-	// }
-
 })

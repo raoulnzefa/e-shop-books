@@ -22,7 +22,6 @@
 		          <h3>{{ product.title }}</h3> <br>
 		          <p>{{ product.price | currency }}</p>
 			      <button 
-					v-on:click="increment"
 					:disabled="!product.inventory"
 					@click="addProductToCart(product)">
 					Add to cart
@@ -41,7 +40,7 @@ export default {
 	name: 'products',
 	data() {
 		return {
-			
+
 		}
 	},
 	computed: {
@@ -52,10 +51,7 @@ export default {
 	methods: {
 		...mapActions([
 			'addProductToCart'
-		]),
-		...mapMutations([
- 			'increment'
- 		])
+		])
 	},
 	created () {
 		this.$store.dispatch('getAllProducts')
@@ -75,12 +71,12 @@ export default {
 					font-size: 40px
 					font-weight: black
 					margin: 0
-				p 
+				p
 					color: #ffffff
 					font-size: 22px
 					font-weight: light
 					margin: 0
-				button 
+				button
 					text-tranform: uppercase
 					font-size: 18px
 					color: #65889b
@@ -116,7 +112,7 @@ export default {
 	      padding: 30px 0
 	      a
 	      	outline: none
-	      h3 
+	      h3
 	        text-transform: uppercase
 	        margin: 10px 0 0 0
 	        font-size: 16px
@@ -127,25 +123,25 @@ export default {
 	        color: black
 	        font-weight: bold
 	      button
-	      	border: none 
+	      	border: none
 	      	background-color: #eee
 	      	padding: 8px 25px
 	      	margin: 10px 0
 	      	cursor: pointer
 	      	transition: .4s
-	      	&:hover 
+	      	&:hover
 	      		background-color: gray
 @media only screen and (max-width: 991px)
-	.menprod .products .products_wrapp .products_wrapp-item 
+	.menprod .products .products_wrapp .products_wrapp-item
 	    width: 44.8%
 	    margin: 2%
 	    padding: 20px 0
 @media only screen and (max-width: 767px)
-	.menprod .products .products_wrapp .products_wrapp-item 
+	.menprod .products .products_wrapp .products_wrapp-item
 	    width: 60%
 	    margin: 2% auto
 	    padding: 20px 0
 @media only screen and (max-width: 480px)
-	.menprod .products .products_wrapp .products_wrapp-item 
+	.menprod .products .products_wrapp .products_wrapp-item
 	    width: 100%
 </style>

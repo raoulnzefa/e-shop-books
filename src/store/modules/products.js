@@ -8,14 +8,6 @@ const state = {
 // getters
 const getters = {
   allProducts: state => state.all
-
-  // filteredProducts: state => {
-  //   return state.products.filter(product => product)
-  // },
-
-  // donefilteredProducts: (state, getters) => {
-  //   return getters.filteredProducts.length
-  // }
 }
 // actions
 const actions = {
@@ -30,6 +22,11 @@ const actions = {
 const mutations = {
   setProducts (state, products) {
     state.all = products
+  },
+
+  removeCartItems (state, removedProduct) {
+    state.all.find(product => product.id === removedProduct.id)
+      .inventory += removedProduct.quantity
   },
 
   decrementProductInventory (state, { id }) {

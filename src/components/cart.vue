@@ -3,7 +3,7 @@
 		<div class="cart" @click="ModalCart = true">
 			<div class="cart_icon" style="cursor: pointer;">
 				<shopping-cart-icon class="custom-class"></shopping-cart-icon>
-				{{ total | currency}} <div class="count">{{ count }}</div>
+				{{ total | currency}}
 			</div>
 		</div>
 		<transition name="animaterouter">
@@ -80,14 +80,6 @@ import { mapGetters, mapActions, mapState, mapMutations } from 'vuex'
 					border-radius: 20px
 					padding: 8px 10px
 					position: relative
-					.count
-						position: absolute
-						top: -20%
-						right: -10%
-						background-color: orange
-						border-radius: 50%
-						color: white
-						padding: 3px 8px
 			.modal-cart
 				background: rgba(0, 0, 0, 0.5)
 				position: fixed
